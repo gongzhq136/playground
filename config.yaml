@@ -7,8 +7,8 @@ proxies:
   - name: 🎶 解锁
     type: http
     server: 192.168.0.20
-    port: 5201
-    tls: true
+    port: 5200
+    # tls: true
 
 proxy-groups:
   - name: 🎵 网易云音乐
