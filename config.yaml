@@ -18,6 +18,7 @@ proxy-groups:
     type: select
     proxies:
       - 🎶 解锁
+      - 🎶 测试
       - DIRECT
 
 rule-providers:
