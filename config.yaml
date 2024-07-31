@@ -4,28 +4,28 @@ log-level: info
 # mixed-port: 7890
 # external-controller: 127.0.0.1:9090
 proxies:
-  - name: 🎶 解锁
+  - name: 🎶 解锁(无损)
     type: http
-    server: 192.168.0.20
+    server: music.liebeqinghe.top
     port: 5200
-  - name: 🎶 测试
+  - name: 🎶 解锁(省流)
     type: http
-    server: 127.0.0.1
-    port: 5200
+    server: music.liebeqinghe.top
+    port: 5202
+
     
 proxy-groups:
   - name: 🎵 网易云音乐
     type: select
     proxies:
-      - 🎶 解锁
-      - 🎶 测试
+      - 🎶 解锁(无损)
+      - 🎶 解锁(省流)
       - DIRECT
 
 rule-providers:
   NeteaseMusic:
     type: http
     behavior: classical
-    # format: text
     path: ./rules/NeteaseMusic.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/NetEaseMusic/NetEaseMusic.yaml
     interval: 86400
