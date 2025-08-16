@@ -5,10 +5,30 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "p:os",
+          "foreground": "#45F1C2",
           "style": "plain",
-          "template": "{{.Icon}} ",
+          "template": "{{.Icon}} {{ .UserName }} on",
           "type": "os"
+        },
+        {
+          "foreground": "#0CA0D8",
+          "properties": {
+            "folder_separator_icon": "/",
+            "style": "full"
+          },
+          "style": "plain",
+          "template": " \uf07b {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "#14A5AE",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "fetch_upstream_icon": true
+          },
+          "style": "plain",
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "type": "git"
         },
         {
           "style": "plain",
@@ -17,38 +37,8 @@
             "home_enabled": true,
             "fetch_virtual_env": true
           },
-          "template": "{{ if .Error }}{{ .Error }}{{ else }}({{ .Venv }} \ue235 {{ .Full }}){{ end }} ",
+          "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }} {{ .Venv }}{{ end }} ",
           "type": "python"
-        },
-        {
-          "foreground": "#98C379",
-          "style": "plain",
-          "template": "\u279c",
-          "type": "text"
-        },
-        {
-          "foreground": "#56B6C2",
-          "properties": {
-            "style": "folder"
-          },
-          "style": "plain",
-          "template": " {{ .Path }}",
-          "type": "path"
-        },
-        {
-          "foreground": "#D0666F",
-          "properties": {
-            "branch_icon": ""
-          },
-          "style": "plain",
-          "template": " <#5FAAE8>git:(</>{{ .HEAD }}<#5FAAE8>)</>",
-          "type": "git"
-        },
-        {
-          "foreground": "#BF616A",
-          "style": "plain",
-          "template": " \u2717",
-          "type": "status"
         }
       ],
       "type": "prompt"
@@ -73,6 +63,5 @@
       "type": "prompt"
     }
   ],
-  "final_space": false,
   "version": 3
 }
